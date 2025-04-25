@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+/* Glassmorphism styles */
+.glass-container {
+  @apply border border-white/10 backdrop-blur-lg;
+}
+
+.glass-input {
+  @apply bg-white/5 border border-white/10 rounded-lg py-2 pr-4 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200;
+}
+.glass-input-form {
+  @apply bg-white/5 border border-gray-300 rounded-lg py-2 pr-4
+   focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
+    transition-all duration-200 pl-10 w-full
+     shadow-sm focus:border-blue-500
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-blue-500/20 hidden;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-blue-500/40 rounded-full hidden hover:bg-blue-500/60;
+}

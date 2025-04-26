@@ -6,6 +6,7 @@ import {
   registerApi,
   logoutApi
 } from '../apis/Authapi'
+import Loading from '../components/Loading';
 
 const AuthContext = createContext();
 
@@ -63,13 +64,13 @@ export function AuthProvider({ children }) {
       const response = await registerApi(formData, 'student');
       return { 
         success: true, 
-        message: 'Registration successful! Please check your email for verification.',
+        message: 'Registration successful.',
         email: response.email
       };
     } catch (error) {
       return { 
         success: false, 
-        message: error.response?.data?.message || 'Registration failed' 
+        message: error
       };
     }
   };
@@ -148,15 +149,6 @@ export function AuthProvider({ children }) {
   );
 }
 
-const Loading = () => {
-  return (
-    <div className='h-screen w-screen bg-white flex justify-center items-center '>
-      <div className='relative border-l-2 border-b-2 transition-all animate-bounce duration-500 ease-in-out border-blue-600 size-12 rounded-full flex justify-center items-center'>
-        <div className='absolute border-l-2 border-b-2 transition-all animate-spin duration-300 ease-in-out border-blue-600 size-10 rounded-full'></div>
-      </div>
-    </div>
-  )
-}
 
 export function useAuth() {
   return useContext(AuthContext);

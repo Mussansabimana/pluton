@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import { 
   ClipboardDocumentCheckIcon,
   BriefcaseIcon,
@@ -9,11 +10,14 @@ import {
   Cog6ToothIcon,
   UserIcon
 } from '@heroicons/react/24/outline';
+import PlutonLogo from "../assets/PlutonLogo.png"
 
 export default function StudentDashboard() {
   const [activeTab, setActiveTab] = useState('internships');
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [activeNav,setActiveNav] = useState("")
+  const [activeNav, setActiveNav] = useState("")
+  
+    const { user, logout } = useAuth();
 
   const navItems = [
     { id: 'internships', name: 'Internships', icon: BriefcaseIcon },
@@ -27,6 +31,10 @@ export default function StudentDashboard() {
     { name: "Internship", Description: "new internship added byhhhhhhhhhhhhhhhhhhhhhhhhhhh", trade: "sotware development", status: "unreaded" },
     { name: "Internship", Description: "new internship added by", trade: "sotware development", status: "unreaded" },
   ]
+
+  const handleLogout = () => {
+    logout(user.role);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -44,7 +52,7 @@ export default function StudentDashboard() {
                 </svg>
               </button>
               <Link to="/" className="flex-shrink-0 text-2xl md:text-3xl lg:text-4xl font-bold text-blue-600">
-                Pluton
+                <img className='h-9' src={PlutonLogo} alt="logo"crossOrigin='a' />
               </Link>
             </div>
             <div className="flex items-center space-x-4">
@@ -124,7 +132,9 @@ export default function StudentDashboard() {
             </nav>
           </div>
           <div className="px-4 py-4 border-t border-gray-200">
-            <button className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700">
+              <button
+                onClick={handleLogout}
+                className="w-full flex items-center cursor-pointer justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700">
               Log Out
             </button>
           </div>

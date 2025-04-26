@@ -57,7 +57,7 @@ export default function StudentRegister() {
                   Register as a student to access internship opportunities tailored for you
                 </p>
                 <img
-                  src="https://illustrations.popsy.co/amber/student-reading.svg"
+                  src="https://illustrations.popsy.co/amber/student-graduation.svg"
                   alt="Student Illustration"
                   className="w-full h-64 object-contain"
                 />

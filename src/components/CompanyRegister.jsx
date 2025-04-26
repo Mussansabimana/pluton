@@ -57,7 +57,7 @@ export default function CompanyRegister() {
                   Register your company to find talented interns and grow your business
                 </p>
                 <img
-                  src="https://illustrations.popsy.co/amber/business-team.svg"
+                  src="https://illustrations.popsy.co/amber/student-graduation.svg"
                   alt="Company Illustration"
                   className="w-full h-64 object-contain"
                 />

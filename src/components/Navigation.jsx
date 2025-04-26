@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useAuth } from '../context/AuthContext';
 import { useState } from 'react';
-import PlutonLogo from "../"
+import PlutonLogo from "../assets/PlutonLogo.png"
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -28,7 +28,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0 text-2xl md:text-3xl lg:text-4xl font-bold text-blue-500">
-            Pluton
+            <img className='h-9' src={PlutonLogo} alt="logo" crossOrigin='a' />
           </Link>
 
           {/* Desktop Menu */}

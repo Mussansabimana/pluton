@@ -21,7 +21,7 @@ export function AuthProvider({ children }) {
         const { data } = await api.get('/auth/me');
         setUser(data.user)
       } catch (error) {
-        navigate("/login")
+        navigate("/")
         console.error('Auth check failed:', error);
       } finally {
         setLoading(false);

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -15,19 +16,19 @@ const Footer = () => {
               <h3 className="text-lg font-semibold  text-slate-400">Quick Links</h3>
               <ul className="mt-4 space-y-2">
                 <li>
-                  <a href="/about" className="text-sm text-slate-500 hover:text-slate-400">
+                  <Link to="/about" className="text-sm text-slate-500 hover:text-slate-400">
                     About Us
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/login" className="text-sm text-slate-500 hover:text-slate-400">
+                  <Link to="/login" className="text-sm text-slate-500 hover:text-slate-400">
                     Login
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/register/student" className="text-sm text-slate-500 hover:text-slate-400  ">
+                  <Link to="/register/student" className="text-sm text-slate-500 hover:text-slate-400  ">
                     Register
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -35,14 +36,14 @@ const Footer = () => {
               <h3 className="text-lg font-semibold text-slate-400">Legal</h3>
               <ul className="mt-4 space-y-2">
                 <li>
-                  <a href="/privacy" className="text-sm text-slate-500 hover:text-slate-400">
+                  <Link to="/privacy" className="text-sm text-slate-500 hover:text-slate-400">
                     Privacy Policy
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/terms" className="text-sm text-slate-500 hover:text-slate-400">
+                  <Link to="/terms" className="text-sm text-slate-500 hover:text-slate-400">
                     Terms of Service
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

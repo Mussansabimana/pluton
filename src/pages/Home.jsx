@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { AcademicCapIcon, BriefcaseIcon, ChartBarIcon } from '@heroicons/react/24/outline';
 import Navigation from '../components/Navigation';
+import { useAuth } from '../context/AuthContext';
+import hero from "../assets/hero.jpeg"
 
 const Home = () => {
   const features = [
@@ -20,6 +22,8 @@ const Home = () => {
       icon: ChartBarIcon,
     },
   ];
+
+  const { user} = useAuth()
 
   return (
     <>
@@ -41,12 +45,14 @@ const Home = () => {
                   </p>
                   <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                     <div className="rounded-md shadow">
-                      <Link
-                        to="/register/student"
-                        className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-white hover:bg-blue-50 md:py-4 md:text-lg md:px-10"
-                      >
-                        Get Started
-                      </Link>
+                        {
+                          !user && <Link
+                          to="/register/student"
+                          className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-white hover:bg-blue-50 md:py-4 md:text-lg md:px-10"
+                        >
+                          Get Started
+                        </Link>
+                      }
                     </div>
                     <div className="mt-3 sm:mt-0 sm:ml-3">
                       <Link
@@ -65,7 +71,7 @@ const Home = () => {
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
           <img
             className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80"
+            src={hero}
             alt="Students working together"
           />
         </div>
@@ -109,12 +115,15 @@ const Home = () => {
           </h2>
           <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
             <div className="inline-flex rounded-md shadow">
-              <Link
-                to="/register/student"
-                className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
-              >
-                Get started
-              </Link>
+                {
+                  !user &&
+                  <Link
+                  to="/register/student"
+                  className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
+                >
+                  Get started
+                </Link>
+              }
             </div>
             <div className="ml-3 inline-flex rounded-md shadow">
               <Link
